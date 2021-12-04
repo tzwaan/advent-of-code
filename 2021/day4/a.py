@@ -4,7 +4,7 @@ class Board:
         self.__board = [
             [
                 [int(number), False]
-                for number in line.strip().split()
+                for number in line.split()
             ]
             for line in lines
         ]
