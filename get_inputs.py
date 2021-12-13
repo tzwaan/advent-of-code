@@ -18,7 +18,7 @@ for year in tqdm(
             data = aocd.get_data(day=day, year=year)
         except aocd.exceptions.PuzzleLockedError as e:
             tqdm.write(str(e))
-            continue
+            break
         folder = f'{year}/day{day:0>2}'
         pathlib.Path(folder).mkdir(parents=True, exist_ok=True)
         with open(f'{folder}/input.txt', mode='w') as input_file:
